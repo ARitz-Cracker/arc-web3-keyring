@@ -1,0 +1,24 @@
+{
+	"name": "arc-web3-keyring",
+	"version": "0.7.0",
+	"description": "An addon for arc-web3 which actually lets you sign transactions.",
+	"keywords": [],
+	"homepage": "https://github.com/ARitz-Cracker/arc-web3-keyring#readme",
+	"bugs": {
+		"url": "https://github.com/ARitz-Cracker/arc-web3-keyring/issues"
+	},
+	"license": "CC-BY-SA-4.0",
+	"author": "Aritz Beobide-Cardinal <aritz@aritzcracker.ca>",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ARitz-Cracker/arc-web3-keyring.git"
+	},
+	"dependencies": {
+		"arc-bufferlib": "^0.9.1-c",
+		"arc-web3-signable-accounts": "^0.7.0",
+		"bitcoin-ts": "^1.4.0",
+		"hdkey-wasm": "^1.1.0",
+		"bip39-wasm": "^2.5.0"
+	}
+}
