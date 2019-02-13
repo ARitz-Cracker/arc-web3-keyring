@@ -1,5 +1,5 @@
 const BufferLib = require("arc-bufferlib");
-const {EthereumAccountSignable, InitializeEthereumAccountSignable} = require("arc-web3-signable-accounts");
+const {EthereumAccountSignable, InitializeEthereumAccountSignable, rlp} = require("arc-web3-signable-accounts");
 const {initializeHDKey, HDKey} = require("hdkey-wasm");
 const bip39 = require("bip39-wasm");
 
@@ -75,5 +75,6 @@ module.exports = {
     EthereumAccountKeyring,
     EthereumAccountSignable,
     bip39,
+    rlp,
     HDKey
 }
