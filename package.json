@@ -1,7 +1,7 @@
 {
 	"name": "arc-web3-keyring",
-	"version": "0.7.1",
-	"description": "An addon for arc-web3 which actually lets you sign transactions.",
+	"version": "0.8.0",
+	"description": "Derive multiple accounts from a seed.",
 	"keywords": [],
 	"homepage": "https://github.com/ARitz-Cracker/arc-web3-keyring#readme",
 	"bugs": {
@@ -15,10 +15,9 @@
 		"url": "https://github.com/ARitz-Cracker/arc-web3-keyring.git"
 	},
 	"dependencies": {
-		"arc-bufferlib": "^0.9.2",
-		"arc-web3-signable-accounts": "^0.7.2",
-		"bitcoin-ts": "^1.4.0",
-		"hdkey-wasm": "^1.1.0",
-		"bip39-wasm": "^2.5.0"
+		"arc-web3-signable-accounts": "^0.8.0",
+		"@aritz-cracker/cryptowasm": "^1.18.0",
+		"hdkey-wasm": "^1.2.0",
+		"bip39-wasm": "^2.6.0"
 	}
 }

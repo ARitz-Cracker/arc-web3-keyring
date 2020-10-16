@@ -1,10 +1,17 @@
-const BufferLib = require("arc-bufferlib");
+let allocRandom;
+try{
+	allocRandom = require("crypto").randomBytes;
+}catch(ex){
+	allocRandom = function(len){
+		const bytes = new Uint8Array(len);
+		crypto.getRandomValues(bytes);
+		return bytes;
+	}
+}
 const {EthereumAccountSignable, InitializeEthereumAccountSignable, rlp} = require("arc-web3-signable-accounts");
 const {initializeHDKey, HDKey} = require("hdkey-wasm");
 const bip39 = require("bip39-wasm");
-
 let secp256k1 = null;
-
 class EthereumAccountKeyring {
     constructor(entropyOrSeed, wordlist, cache, forceSeed){
         let seedStr;
@@ -27,7 +34,7 @@ class EthereumAccountKeyring {
             seedStr = bip39.entropyToMnemonic(entropyOrSeed, wordlist);
             this.entropy = entropyOrSeed;
         }else if(entropyOrSeed == null){
-            this.entropy = BufferLib.allocRandom(32);
+            this.entropy = allocRandom(32);
             seedStr = bip39.entropyToMnemonic(this.entropy, wordlist);
         }
 
